@@ -20,8 +20,8 @@ def login(request):
 
 
 def callback(request):
-    bitbucket = OAuth2Session(client_id, request.session['oauth_state'])
+    bitbucket = OAuth2Session(client_id=client_id, state=request.session['oauth_state'])
     token = bitbucket.fetch_token(token_url, client_secret=client_secret,
-                                    authorization_response=request.url)
+                                    authorization_response=request.get_full_path())
 
     return HttpResponse('{token}'.format(token=token))

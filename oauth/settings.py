@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'service',
     'debug_toolbar',
+    'sslserver',
 )
 
 MIDDLEWARE_CLASSES = (
